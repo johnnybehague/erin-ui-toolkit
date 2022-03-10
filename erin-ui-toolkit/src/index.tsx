@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom';
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import { ButtonsPage } from './examples';
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ButtonsPage />
   </React.StrictMode>,
   document.getElementById('root')
 );
