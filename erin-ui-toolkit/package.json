@@ -1,44 +1,72 @@
 {
-  "name": "erin-ui-toolkit",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.16.2",
-    "@testing-library/react": "^12.1.4",
-    "@testing-library/user-event": "^13.5.0",
-    "@types/jest": "^27.4.1",
-    "@types/node": "^16.11.26",
-    "@types/react": "^17.0.40",
-    "@types/react-dom": "^17.0.13",
-    "node-sass": "^7.0.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-scripts": "5.0.0",
-    "typescript": "^4.6.2",
-    "web-vitals": "^2.1.4"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
+    "name": "erin-ui-toolkit",
+    "version": "0.1.0",
+    "description": "Erin UI Toolkit",
+    "author": "Johnny BEHAGUE",
+    "keywords": [
+        "react",
+        "toolkit"
     ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+    "private": true,
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "files": [
+        "dist",
+        "README.md"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/johnnybehague/erin-ui-toolkit.git"
+    },
+    "dependencies": {
+        "@babel/polyfill": "^7.12.1",
+        "@babel/preset-typescript": "^7.16.7",
+        "@testing-library/jest-dom": "^5.16.2",
+        "@testing-library/react": "^12.1.4",
+        "@testing-library/user-event": "^13.5.0",
+        "@types/jest": "^27.4.1",
+        "@types/node": "^16.11.26",
+        "@types/react": "^17.0.40",
+        "@types/react-dom": "^17.0.13",
+        "node-sass": "^7.0.1",
+        "react": "^17.0.2",
+        "react-dom": "^17.0.2",
+        "react-scripts": "5.0.0",
+        "typescript": "^4.6.2",
+        "web-vitals": "^2.1.4"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "test": "react-scripts test",
+        "eject": "react-scripts eject",
+        "type-check": "tsc --noEmit",
+        "type-check:watch": "npm run type-check --watch",
+        "build": "tsc",
+        "build2": "npm run build:types && npm run build.js",
+        "build:types": "tsc --emitDeclarationOnly",
+        "build.js": "babel src --out-dir dist --extensions \".ts, .tsx\" --source-maps inline"
+    },
+    "eslintConfig": {
+        "extends": [
+            "react-app",
+            "react-app/jest"
+        ]
+    },
+    "browserslist": {
+        "production": [
+            ">0.2%",
+            "not dead",
+            "not op_mini all"
+        ],
+        "development": [
+            "last 1 chrome version",
+            "last 1 firefox version",
+            "last 1 safari version"
+        ]
+    },
+    "devDependencies": {
+        "@babel/cli": "^7.17.6",
+        "@babel/core": "^7.17.5",
+        "@babel/preset-env": "^7.16.11"
+    }
 }
